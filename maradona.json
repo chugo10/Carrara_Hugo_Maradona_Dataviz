@@ -1,0 +1,210 @@
+{
+  "joueur": "Diego Maradona",
+  "statistiques": [
+    {
+      "saison": "1997/1998",
+      "club": "Boca Juniors",
+      "division": 1,
+      "championnat": {
+        "buts": 2,
+        "passes": 2,
+        "minutes": 184
+      },
+      "total": {
+        "buts": 2,
+        "passes": 2,
+        "minutes": 207
+      }
+    },
+    {
+      "saison": "1995/1996",
+      "club": "Boca Juniors",
+      "division": 1,
+      "championnat": {
+        "buts": 5,
+        "passes": 6
+      },
+      "total": {
+        "buts": 5
+      }
+    },
+    {
+      "saison": "1981/1982",
+      "club": "Boca Juniors",
+      "division": 1,
+      "championnat": {
+        "buts": 28,
+        "passes": 5,
+        "minutes": 385
+      },
+      "total": {
+        "buts": 28,
+        "passes": 5,
+        "minutes": 385
+      }
+    },
+    {
+      "saison": "1993/1994",
+      "club": "Newell’s Old Boys",
+      "division": 1,
+      "championnat": {
+        "buts": 0
+      },
+      "international": {
+        "buts": 9,
+        "minutes": 574
+      }
+    },
+    {
+      "saison": "1992/1993",
+      "club": "FC Séville",
+      "division": 1,
+      "championnat": {
+        "buts": 26,
+        "passes": 5,
+        "minutes": 445
+      },
+      "coupes_nationales": {
+        "buts": 4,
+        "passes": 2,
+        "minutes": 180
+      },
+      "international": {
+        "buts": 2
+      },
+      "total": {
+        "buts": 7,
+        "passes": 7,
+        "minutes": 399
+      }
+    },
+    {
+      "saison": "1991/1992",
+      "club": "Naples",
+      "division": 1,
+      "championnat": {
+        "buts": 18,
+        "passes": 6,
+        "minutes": 263
+      },
+      "continent": {
+        "buts": 2,
+        "minutes": 163
+      },
+      "coupes_nationales": {
+        "buts": 4,
+        "passes": 2,
+        "minutes": 180
+      },
+      "international": {
+        "buts": 11,
+        "passes": 2,
+        "minutes": 1050
+      },
+      "total": {
+        "buts": 26,
+        "passes": 10,
+        "minutes": 727
+      }
+    },
+    {
+      "saison": "1990/1991",
+      "club": "Naples",
+      "division": 1,
+      "championnat": {
+        "buts": 28,
+        "passes": 16,
+        "minutes": 149
+      },
+      "continent": {
+        "buts": 3,
+        "passes": 9,
+        "minutes": 358
+      },
+      "coupes_nationales": {
+        "buts": 12,
+        "passes": 7,
+        "minutes": 138
+      },
+      "international": {
+        "buts": 11,
+        "passes": 2,
+        "minutes": 1050
+      },
+      "total": {
+        "buts": 89,
+        "passes": 17,
+        "minutes": 254
+      }
+    },
+    {
+      "saison": "1992/1993",
+      "club": "FC Barcelone",
+      "division": 1,
+      "championnat": {
+        "buts": 26,
+        "passes": 5,
+        "minutes": 445
+      },
+      "coupes_nationales": {
+        "buts": 4,
+        "passes": 2,
+        "minutes": 180
+      },
+      "international": {
+        "buts": 2
+      },
+      "total": {
+        "buts": 38,
+        "passes": 7,
+        "minutes": 399
+      }
+    },
+    {
+      "saison": "1992/1993",
+      "club": "Argentinos Juniors",
+      "division": 1,
+      "championnat": {
+        "buts": 26,
+        "passes": 5,
+        "minutes": 445
+      },
+      "coupes_nationales": {
+        "buts": 4,
+        "passes": 2,
+        "minutes": 180
+      },
+      "international": {
+        "buts": 2
+      },
+      "total": {
+        "buts": 116,
+        "passes": 7,
+        "minutes": 399
+      }
+    }
+  ],
+  "total": {
+    "championnat": {
+      "buts": 491,
+      "passes": 258
+    },
+    "continent": {
+      "buts": 93,
+      "passes": 165
+    },
+    "coupes_nationales": {
+      "buts": 65,
+      "passes": 39
+    },
+    "international": {
+      "buts": 91,
+      "passes": 34
+    },
+    "total": {
+      "buts": 680,
+      "passes": 344
+    }
+  }
+  
+}

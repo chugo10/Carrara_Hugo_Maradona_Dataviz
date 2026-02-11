@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les exploits de Diego Maradona</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --bleu-argentine: #74a9d8;
+      --blanc-argentine: #f0f8ff;
+      --doré: #d4af37;
+      --gris-foncé: #222;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bleu-argentine) 50%, var(--blanc-argentine) 50%);
+      color: var(--gris-foncé);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      color: var(--doré);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      padding: 8px 12px;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: white;
+      background-color: var(--doré);
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      border-bottom: 3px solid var(--doré);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: var(--doré);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin: 0;
+      letter-spacing: 3px;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .graph-section {
+      width: 100%;
+      max-width: 900px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 1rem;
+      margin: 2rem auto;
+    }
+
+    .graph-section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--gris-foncé);
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    [id^="chart"] {
+      height: 300px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      font-style: italic;
+      color: var(--doré);
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 2px solid var(--doré);
+      width: 100%;
+      max-width: 900px;
+    }
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--bleu-argentine);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--gris-foncé);
+      font-size: 1.2rem;
+      z-index: 2000;
+    }
+
+    .loader-image {
+      width: 80px;
+      height: 80px;
+      animation: spin 4s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+
+    @media screen and (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+
+    .graph-section {
+      padding: 1rem 0.5rem;
+    }
+
+    [id^="chart"] {
+      height: 250px;
+    }
+}
+
+  </style>
+</head>
+<body>
+    <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <img src="https://ogeo.info/wp-content/uploads/2023/02/solntse-simvol-argentinskogo-flaga-foto.png" alt="Soleil argentin" class="loader-image" />
+    <p>Chargement...</p>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="visualisations.html">Visualisations</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+
+  <header>
+    <h1>Les exploits de Diego Maradona</h1>
+  </header>
+
+  <section class="graph-section">
+    <h2>Statistiques de Maradona</h2>
+    <div id="graph-container">
+      
+    <div id="chart1"></div>
+    <div id="chart2"></div>
+    <div id="chart3"></div>
+    <div id="chart4"></div>
+    <div id="chart5"></div>
+    <div id="chart6"></div>
+    <div id="chart7"></div>
+  </section>
+
+  <footer>
+    « Je joue pour le peuple, pas pour les riches. » — Diego Maradona
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 1200); // durée du loading en ms
+  });
+    // Graphique 1 : Buts par phase
+    var chart1 = echarts.init(document.getElementById('chart1'));
+var option1 = {
+  title: {
+    text: 'Buts par Coupe du Monde',
+    left: 'center',
+    textStyle: {
+      color: '#222',
+      fontWeight: 'bold',
+      fontSize: 22
+    }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'shadow' }
+  },
+  xAxis: {
+    type: 'category',
+    data: ['1982', '1986', '1990', '1994'],
+    axisTick: { alignWithLabel: true }
+  },
+  yAxis: {
+    type: 'value',
+    name: 'Buts'
+  },
+  series: [{
+    name: 'Buts',
+    type: 'bar',
+    data: [2, 5, 0, 1],
+    itemStyle: {
+      color: '#74a9d8'
+    },
+    emphasis: {
+      itemStyle: {
+        color: '#d4af37'
+      }
+    },
+    animationDuration: 1000
+  }]
+};
+chart1.setOption(option1);
+
+    // Graphique 2 : Buts par année
+    echarts.init(document.getElementById('chart2')).setOption({
+      title: { text: "Buts par année", left: 'center' },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' }
+      },
+      xAxis: { type: 'category', data: ['1976','1977','1978','1979','1980','1981','1982/83', '1983/84', '1984/85', '1985/86', '1986/87', '1987/88', '1988/89', '1989/90', '1990/91', '1991/92', '1992/93', '1993/94', '1994/95', '1995/96', '1996/97', '1997/98'] },
+      yAxis: { type: 'value' },
+      series: [{
+        data: [2, 19, 25, 26, 43, 28, 11, 11, 14, 11, 10, 15, 9, 16, 6, 0, 5, 0, 5, 0, 2],
+        type: 'line',
+        itemStyle: { color: '#cc3300' },
+        
+      }]
+    });
+
+    // Graphique 3 : Buts par lieu
+    echarts.init(document.getElementById('chart3')).setOption({
+      title: { text: "Buts par lieu", left: 'center' },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' }
+      },
+      xAxis: { type: 'category', data: ['Italie', 'Argentine', 'Espagne'] },
+      yAxis: { type: 'value' },
+      series: [{
+        data: [259, 151, 88],
+        type: 'bar',
+        itemStyle: { color: '#339933' },
+        emphasis: {
+        itemStyle: {
+        color: '#d4af37'
+        }
+      },
+        animationDuration: 1000
+      }]
+    });
+
+    // Graphiques dynamiques depuis maradona.json
+    fetch('maradona.json')
+      .then(res => res.json())
+      .then(data => {
+        const saisons = data.statistiques.map(s => s.saison);
+        const buts = data.statistiques.map(s => s.total?.buts || 0);
+        const passes = data.statistiques.map(s => s.total?.passes || 0);
+
+        const clubs = {};
+        data.statistiques.forEach(s => {
+          clubs[s.club] = (clubs[s.club] || 0) + (s.total?.buts || 0);
+        });
+        const nomsClubs = Object.keys(clubs);
+        const butsClubs = Object.values(clubs);
+
+        // Graphique 4 : Buts par compétition
+        echarts.init(document.getElementById('chart4')).setOption({
+        title: { text: "Répartition des buts par compétition", left: 'center' },
+        tooltip: { trigger: 'item' },
+        legend: { orient: 'vertical', left: 'left' },
+        series: [{
+          type: 'pie',
+          radius: '50%',
+          data: [
+            { value: 8, name: 'Coupe du Monde' },
+            { value: 81, name: 'Serie A' },
+            { value: 27, name: 'Liga' },
+            { value: 150, name: 'Primera División' },
+            { value: 3, name: 'Coupe UEFA' },
+            { value: 4, name: 'Copa America' },
+            { value: 29, name: 'Coppa Italia' }
+          ],
+          emphasis: {
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }]
+        });
+
+        // === 📈 chart5 : Buts vs Passes par saison (fusion des doublons) ===
+        const statsParSaison = {};
+
+        data.statistiques.forEach(s => {
+          const saison = s.saison;
+          const buts = s.total?.buts || 0;
+          const passes = s.total?.passes || 0;
+
+          if (!statsParSaison[saison]) {
+            statsParSaison[saison] = { buts: 0, passes: 0 };
+          }
+
+          statsParSaison[saison].buts += buts;
+          statsParSaison[saison].passes += passes;
+        });
+
+        const saisonsBP = Object.keys(statsParSaison);
+        const butsBP = saisonsBP.map(s => statsParSaison[s].buts);
+        const passesBP = saisonsBP.map(s => statsParSaison[s].passes);
+
+        const chart5 = echarts.init(document.getElementById('chart5'));
+        const option5 = {
+          title: { text: "", left: 'center' },
+          tooltip: { trigger: 'axis' },
+          legend: { data: ['Buts', 'Passes'] },
+          xAxis: {
+            type: 'category',
+            data: saisonsBP,
+            axisLabel: { rotate: 30 }
+          },
+          yAxis: { type: 'value' },
+          series: [
+            {
+              name: 'Buts',
+              type: 'line',
+              smooth: true,
+              data: butsBP,
+              itemStyle: { color: '#E74C3C' }
+            },
+            {
+              name: 'Passes',
+              type: 'line',
+              smooth: true,
+              data: passesBP,
+              itemStyle: { color: '#2ECC71' }
+            }
+          ]
+        };
+        chart5.setOption(option5);
+
+
+
+
+        // Graphique 6 : Répartition des buts par club
+        echarts.init(document.getElementById('chart6')).setOption({
+          title: { text: "Buts par club", left: 'center' },
+          tooltip: { trigger: 'item' },
+          legend: { orient: 'vertical', left: 'left' },
+          series: [{
+            type: 'pie',
+            radius: '50%',
+            data: nomsClubs.map((c, i) => ({ name: c, value: butsClubs[i] }))
+          }]
+        });
+        echarts.init(document.getElementById('chart7')).setOption({
+          title: { text: "Stat du joueur", left: 'center', top: '0' },
+          tooltip: {},
+          radar: {  center: ['50%', '60%'],
+            indicator: [
+              { name: 'Dribble', max: 100 },
+              { name: 'Passe', max: 100 },
+              { name: 'Tir', max: 100 },
+              { name: 'Endurance', max: 100 },
+              { name: 'Vision', max: 100 }
+            ]
+          },
+          series: [{
+            type: 'radar',
+            data: [{
+              value: [95, 85, 90, 80, 88],
+              name: 'Maradona'
+            }]
+          }]
+        });
+      })
+      .catch(err => console.error("Erreur de chargement du JSON :", err));
+  </script>
+</body>
+</html>

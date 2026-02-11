@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>À propos de Diego Maradona</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0b3d91; /* Bleu argentin foncé */
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Style de la barre de navigation */
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+
+  .card {
+    background: linear-gradient(135deg, #f1c40f, #e67e22); /* dégradé doré/orangé */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.7);
+    padding: 30px;
+    max-width: 700px;
+    animation: slideFadeIn 1.5s ease forwards;
+    opacity: 0;
+  }
+
+  /* Responsivité de la navbar */
+  @media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar li {
+      margin: 10px 0;
+    }
+  }
+
+
+  @keyframes slideFadeIn {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px #b8860b;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="visualisations.html">Visualisations</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      
+    </ul>
+  </nav>
+  
+
+<div class="card">
+  <h2>À propos de Diego Maradona</h2>
+  <p>
+    Diego Armando Maradona, né le 30 octobre 1960 à Lanús (province de Buenos Aires, Argentine) et mort le 25 novembre 2020 à Tigre (province de Buenos Aires), est un footballeur international argentin devenu entraîneur. Durant sa carrière de joueur, entre 1976 et 1997, il joue au poste de milieu offensif sous le maillot no 10.
+  </p>
+  <p>
+    Surnommé El Pibe de Oro (Le gamin en or), il est considéré comme l'un des meilleurs joueurs de l'histoire du football.
+  </p>
+  <p>
+    Joueur prodige des années 1980, artisan de la victoire de l'équipe d'Argentine à la Coupe du monde 1986 au Mexique, star éternelle du Napoli, il est aussi l'une des personnalités les plus controversées du sport et de la société en raison de ses relations peu recommandables à cette époque, ses nombreux dérapages verbaux, ses deux contrôles positifs en 1991 en Italie et en 1994 lors du mondial américain et de sa dépendance à la cocaïne et au cannabis qui a largement perturbé sa carrière de joueur professionnel ainsi que son état de santé.
+  </p>
+</div>
+
+<button id="toggleVideos">Masquer les vidéos</button>
+
+
+<div class="video-bubbles">
+  <iframe src="https://www.youtube.com/embed/SG09-TSYHUA?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/Pnp-tfk1tbU?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/vbdwpt9tXIM?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/VmyssDtOiLM?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/2ZEA7O3qdnE?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/fEGaRRrPGdc?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/9-VvWQTwRtw?autoplay=1&mute=1" class="bubble" allow="autoplay" allowfullscreen></iframe>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('toggleVideos');
+  const bubbles = document.querySelector('.video-bubbles');
+  let visible = true;
+
+  toggleBtn.addEventListener('click', () => {
+    visible = !visible;
+    bubbles.style.display = visible ? 'block' : 'none';
+    toggleBtn.textContent = visible ? 'Masquer les vidéos' : 'Afficher les vidéos';
+  });
+</script>
+
+
+</body>
+</html>

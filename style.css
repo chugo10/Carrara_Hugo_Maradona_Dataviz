@@ -1,0 +1,415 @@
+/* Palette de couleurs inspirée de l'Argentine */
+:root {
+  --bleu-argentine: #74a9d8;
+  --blanc-argentine: #f0f8ff;
+  --doré: #d4af37;
+  --gris-foncé: #222;
+  --bleu-naples: #12A0D7;
+}
+
+body.home {
+  background-color: #003C82; /* Bleu foncé du Napoli */
+  color: white;
+  margin: 0;
+  font-family: 'Arial Black', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bleu-naples) 50%, var(--blanc-argentine) 50%), url('images/texture-doree.jpg');
+  background-size: cover;
+  color: var(--gris-foncé);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Arial Black', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bleu-argentine) 50%, var(--blanc-argentine) 50%), url('images/texture-doree.jpg');
+  background-size: cover;
+  color: var(--gris-foncé);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+header {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0 1rem;
+  border-bottom: 3px solid var(--doré);
+  position: relative;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--doré);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 0;
+  letter-spacing: 3px;
+  font-family: 'Brush Script MT', cursive;
+}
+
+nav a {
+  color: var(--doré);
+}
+
+nav a:hover {
+  color: white;
+  background-color: var(--doré);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+footer {
+  color: var(--doré);
+  border-top: 2px solid var(--doré);
+}
+
+
+#graph-container {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+#graph-container::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 150px;
+  height: 150px;
+  background-image: url('image/Maradona.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  filter: grayscale(100%) contrast(120%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#chart1 {
+  position: relative;
+  z-index: 1;
+  height: 400px;
+}
+
+
+footer {
+  margin-top: auto;
+  font-style: italic;
+  color: var(--doré);
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 2px solid var(--doré);
+  width: 100%;
+  max-width: 900px;
+}
+
+ /* Conteneur de la carte */
+ .jersey-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #12A0D7; /* Bleu ciel du SSC Napoli */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Représentation du maillot */
+.jersey {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-color: #12A0D7;
+  border-radius: 10px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Numéro au centre */
+.number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+/* Animation de flottement */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.jersey-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation de clignotement */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.number {
+  animation: blink 1s step-start infinite;
+}
+
+#toggleVideos {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f1c40f;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+  z-index: 1001;
+}
+
+#toggleVideos:hover {
+  background-color: #e67e22;
+  color: white;
+}
+
+
+.video-bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  width: 180px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  animation: float 20s infinite ease-in-out;
+  opacity: 0.5;
+}
+
+/* Positionnement aléatoire */
+.bubble:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.bubble:nth-child(2) { top: 20%; left: 70%; animation-delay: 2s; }
+.bubble:nth-child(3) { top: 50%; left: 30%; animation-delay: 4s; }
+.bubble:nth-child(4) { top: 60%; left: 80%; animation-delay: 6s; }
+.bubble:nth-child(5) { top: 75%; left: 10%; animation-delay: 8s; }
+.bubble:nth-child(6) { top: 35%; left: 50%; animation-delay: 10s; }
+.bubble:nth-child(7) { top: 85%; left: 60%; animation-delay: 12s; }
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+[id^="chart"] {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .graph-section {
+    padding: 1rem 0.5rem;
+  }
+
+  [id^="chart"] {
+    height: 250px;
+  }
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.4s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Bouton fermer */
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 40px;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ============================= */
+/* 🔄 CARD FLIP 3D */
+/* ============================= */
+
+.jersey-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.jersey-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.jersey-card.flipped .jersey-inner {
+  transform: rotateY(180deg);
+}
+
+.jersey-front,
+.jersey-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jersey-front {
+  background-color: #12A0D7;
+}
+
+.jersey-back {
+  background: linear-gradient(135deg, #f1c40f, #e67e22);
+  transform: rotateY(180deg);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ============================= */
+/* 🖼️ MODAL INFOGRAPHIE */
+/* ============================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Bouton fermer */
+.close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  font-size: 40px;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+
+
+
+
